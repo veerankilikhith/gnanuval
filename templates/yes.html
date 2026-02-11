@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>She Said YES ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="yes-page">
+
+    <div class="yes-container">
+
+        <h1 class="yes-title">She Said YES ❤️</h1>
+
+        <div class="ring">💍</div>
+
+        <h2 class="yes-sub">My Happiest Moment Ever 💕</h2>
+
+        <p class="final-line">
+            From today, it's you and me forever ❤️
+        </p>
+
+        <p id="finalMessage" class="typed-love"></p>
+
+    </div>
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+
+    function launchConfetti() {
+        var duration = 4 * 1000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+            confetti({
+                particleCount: 6,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
+    }
+
+    let text = "I love you more than words can ever express ❤️";
+    let j = 0;
+
+    function typeFinal() {
+        if (j < text.length) {
+            document.getElementById("finalMessage").innerHTML += text.charAt(j);
+            j++;
+            setTimeout(typeFinal, 50);
+        }
+    }
+
+    window.onload = function() {
+        launchConfetti();
+        typeFinal();
+    };
+
+    </script>
+
+</body>
+</html>
