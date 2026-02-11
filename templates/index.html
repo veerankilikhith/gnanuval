@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div id="container">
+
+    <!-- STEP 1 -->
+    <div id="step1" class="screen active">
+        <h1 class="pulse">Hey Gnanu ❤️</h1>
+        <button onclick="showEnvelope()">Next ➡️</button>
+    </div>
+
+    <!-- STEP 2 -->
+<div id="step2" class="screen">
+
+    <audio id="bgMusic" src="{{ url_for('static', filename='music.mp3') }}"></audio>
+
+    <div class="envelope" onclick="openEnvelope()" id="envelope">
+        <div class="flap" id="flap"></div>
+
+        <div class="letter" id="letter">
+
+            <!-- SCROLL AREA -->
+            <div class="message-box">
+                <p id="typedText"></p>
+            </div>
+
+            <!-- BUTTON OUTSIDE SCROLL AREA -->
+            <button id="letterNextBtn" class="hidden" onclick="showQuestion()">
+                Continue ➡️
+            </button>
+
+        </div>
+    </div>
+
+</div>
+
+
+    <!-- STEP 3 -->
+    <div id="step3" class="screen">
+        <h2>Will You Be My Valentine? 💖</h2>
+        <button class="yes-btn" onclick="goToYes()">YES 💘</button>
+        <button class="no-btn" id="noBtn">NO 🙈</button>
+    </div>
+
+</div>
+
+<script>
+
+let fullText = `{{ message|safe }}`;
+let i = 0;
+
+function showEnvelope() {
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
+}
+
+function openEnvelope() {
+
+    document.getElementById("envelope").onclick = null;
+
+    // Music fade
+    let music = document.getElementById("bgMusic");
+    music.volume = 0;
+    music.play();
+
+    let fade = setInterval(() => {
+        if (music.volume < 0.5) {
+            music.volume += 0.05;
+        } else {
+            clearInterval(fade);
+        }
+    }, 200);
+
+    // Open flap
+    document.getElementById("flap").style.transform = "rotateX(-180deg)";
+
+    // Slide letter up properly
+    setTimeout(() => {
+        document.getElementById("letter").style.transform = "translateY(-80px)";
+        typeWriter();
+    }, 800);
+}
+
+function typeWriter() {
+    if (i < fullText.length) {
+        document.getElementById("typedText").innerHTML += fullText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
+    } else {
+        document.getElementById("letterNextBtn").classList.remove("hidden");
+    }
+}
+
+function showQuestion() {
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step3").classList.add("active");
+}
+
+function goToYes() {
+    document.body.style.opacity = "0";
+    setTimeout(() => {
+        window.location.href = "/yes";
+    }, 600);
+}
+
+/* NO button movement */
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function() {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    this.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+</script>
+
+</body>
+</html>
