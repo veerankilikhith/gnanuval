@@ -3,7 +3,7 @@ body {
     font-family: 'Dancing Script', cursive;
     background: radial-gradient(circle at top, #ff758c, #ff4b5c, #c9184a);
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     transition: opacity 0.6s ease;
 }
 
@@ -80,20 +80,14 @@ button:hover {
 /* Envelope */
 .envelope {
     position: relative;
-    width: 420px;
-    height: 260px;
+    width: 90%;
+    max-width: 420px;
+    height: 220px;
     background: #ffffff;
     border-radius: 12px;
     perspective: 1000px;
+    box-shadow: 0px 25px 50px rgba(0,0,0,0.3);
     overflow: visible;
-
-    /* smoother animation */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-    /* deeper premium shadow */
-    box-shadow: 
-        0 25px 50px rgba(0,0,0,0.3),
-        0 0 20px rgba(255,255,255,0.1);
 }
 
 /* Hover Effect (Premium Feel) */
@@ -122,18 +116,21 @@ button:hover {
     width: 90%;
     left: 5%;
     top: 40px;
-    height: 320px;
+    max-height: 60vh;   /* IMPORTANT */
+    height: auto;
 
-    padding: 30px;
+    padding: 20px;
     background: #fdf5e6;
     border-radius: 10px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 
     transform: translateY(180px);
     transition: transform 1.5s ease;
 
     z-index: 3;
 
-    /* IMPORTANT FIX */
     display: flex;
     flex-direction: column;
 
@@ -276,4 +273,25 @@ h2 {
     }
 
 }
+@media (max-width: 600px) {
+
+    .pulse {
+        font-size: 40px;
+    }
+
+    .message-box {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .envelope {
+        height: 200px;
+    }
+
+}
+
 
