@@ -15,7 +15,7 @@ Mana journey chala vintha kadha…
 But ippudu alochisthe anipisthundhi… maybe destiny was slowly writing our story.
 
 Nuv SVS lo chadivavu ani telisinappudu nenu shock ayyanu.
-Nuv lunch box kosam kindhaki vasthav ani telisi, nenu roju kindhaki vache vadini okkasari ninnu chudali ani.Maybe destiny wanted the right time.
+Nuv lunch box kosam kindhaki vasthav ani cheppaavu appudu kuda shock okkasari kuda chudala ani.Maybe destiny wanted the right time.
 
 Gnanu… nuv antte chala istam.
 I truly love you from the bottom of my heart.
