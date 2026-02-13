@@ -5,13 +5,30 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     message = """
-    hey Gnanu,i believe in destiny from the day i saw you.
-    mana eddharam same 5th cls lo join ayyam,inter dhaka adhe clg telidu baley vintha kadhaa kanisam chudala
-    same centre malli 2years ayina teliduuu,ippudu same clg nenu ninnu 1-2 lo chusa appudu nuv telidu malli malli
-    gaa nuv svs lo chadivavu ani telisindhi nenu shock nuv lunch box kosam kindhaki vasthavu anaganey nenu roju vache
-    vadini ayina chudala maybe destiny antte adhe emoo..Gnanu i truly love you from the bottom of my heart.
-    Will You Marry Me Gnanu! I don't know nitho vunte bagindidhi nuv navvithe bagundidhi overall nitho vunte chalu ane
-    feeling vundidhi i hope your reply will be in a positive way.
+    Hey Gnanu,
+
+Ninnu first time chusina roju nundi destiny ane nammakam start ayyindhi.
+Mana journey chala vintha kadha…
+
+5th class nundi mana iddaram same school lo chadavadam… inter varaku same college lo undadam… kani okkasari kuda proper ga kalavadam jaragaledu. Same centre lo 2 years exams rayadam jarigindhi… still we didn’t notice each other.
+
+But ippudu alochisthe anipisthundhi… maybe destiny was slowly writing our story.
+
+Nuv SVS lo chadivavu ani telisinappudu nenu shock ayyanu.
+Nuv lunch box kosam kindhaki vasthav ani telisi, nenu roju kindhaki vachhedi — just okkasari ninnu chudali ani. Kani malli chudaledu… maybe destiny wanted the right time.
+
+Gnanu… ninnu chala ishtam.
+I truly love you from the bottom of my heart.
+
+Nitho unte baguntundhi… nuv navvithe inka baguntundhi…
+Honestly, naaku life lo chala pedda expectations levu — nitho kalisi nadavadam chalu ane feeling vastundi.
+
+I don’t want to force you or rush you.
+Nee decision ni respect chestha.
+Kani oka maata matram nijam — naa feelings marchavu.
+
+Will you give me a chance to be part of your life… forever❤️?
+Will you walk with me… not just now… but for life❤️?
     """
     return render_template("index.html", message=message)
 
